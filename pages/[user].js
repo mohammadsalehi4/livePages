@@ -16,7 +16,7 @@ function userPage(){
     const [getName,SetgetName]=useState()
     const [info,SetInfo]=useState()
     const [imageAdd,SetImageAdd]=useState(undefined)
-    const [buttonMode,SetbuttonMode]=useState(true)
+    const [buttonMode,SetbuttonMode]=useState(false)
 
     useEffect(()=>{
         SetgetName(user)
