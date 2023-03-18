@@ -300,7 +300,7 @@ table {
   color: white;
   font-family: mediomNunito;
   margin-left: 4%;
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 35px;
 }
 #userProfile #userDataBox .userProfNumbers h1, #userProfile #userDataBox .userProfNumbers h2 {
@@ -308,7 +308,7 @@ table {
 }
 #userProfile #userDataBox .userProfNumbers h2 {
   margin-top: 7px;
-  font-size: 11px;
+  font-size: 14px;
   color: #dbdbdb;
 }
 #userProfile #userDataBox .first {
@@ -354,7 +354,7 @@ table {
 #userProfile #userDataBox #userProfileButton {
   display: block;
   background: none;
-  margin-top: 30px;
+  margin-top: 28px;
   width: 90%;
   margin-left: 5%;
 }
@@ -364,9 +364,9 @@ table {
   border: none;
   width: 30%;
   margin-left: 5%;
-  padding: 5px 0px;
+  padding: 7px 0px;
   border-radius: 30px;
-  font-size: 13px;
+  font-size: 15px;
   background: #b49cf1;
 }
 #userProfile #userDataBox #userProfileButton #first {
