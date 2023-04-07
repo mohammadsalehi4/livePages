@@ -17,6 +17,7 @@ function userPage(){
     const [info,SetInfo]=useState()
     const [imageAdd,SetImageAdd]=useState(undefined)
     const [buttonMode,SetbuttonMode]=useState(false)
+    const [isFollow,SetisFollow]=useState(false)
 
     useEffect(()=>{
         SetgetName(user)
@@ -65,6 +66,36 @@ function userPage(){
         }
     },[buttonMode])
 
+    useEffect(()=>{
+        const followed=States.following
+        if(info!=undefined){
+            const check=followed.find(value=>value===info.userId)
+            if(check){
+                SetisFollow(true)
+            }else{
+                SetisFollow(false)
+            }
+        }
+    },[,info,States.following])
+
+    const followthisuser=()=>{
+        const followed=States.following
+        const check=followed.find(value=>value===info.userId)
+        if(check){
+        }else{
+            dispatch({type:"ADDTOFOLLOWING",newUser:info.userId})
+        }
+    }
+    
+    const unfollowthisuser=()=>{
+        const followed=States.following
+        const check=followed.find(value=>value===info.userId)
+        if(check){
+            const  deletedItems = followed.filter(e => e !== info.userId)
+            dispatch({type:"UNFOLLOW",users:deletedItems})
+        }
+    }
+
     return (
         <Layout title={user}>
             {
@@ -93,7 +124,11 @@ function userPage(){
                             <h4>{info.email}</h4>
                         </div>
                         <div id="userProfileButton">
-                            <button id="first">Follow</button>
+                            {isFollow ? 
+                             <button id="first" className="followed" onClick={unfollowthisuser}>Followed</button>
+                             :
+                             <button id="first" onClick={followthisuser}>Follow</button>
+                            }
                             <button>Message</button>
                             <button>...</button>
                         </div>

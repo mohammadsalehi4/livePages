@@ -2,7 +2,12 @@ const initialState={
     profileImage:"/images/prof.jpg",
     money:150,
     notifNumber:3,
-    username:"Mohammad",
+    username:"Mohammad",        
+    userId:"msalehi79",
+    description:"hello this is my example description.",
+    email:"mohammad@gmail.com",
+    password:12345678,
+    following:["rob_rob"],
     people:[{
         name:"nicolas",
         followers:259,
@@ -51,7 +56,18 @@ const initialState={
 }
 
 const reducer=(state=initialState,action)=>{
-    
+    if(action.type==="ADDTOFOLLOWING"){
+        return {
+            ...state,
+            following:[...state.following,action.newUser]
+        }
+    }
+    if(action.type==="UNFOLLOW"){
+        return {
+            ...state,
+            following:[...action.users]
+        }
+    }
     return state
 }
 

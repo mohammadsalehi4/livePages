@@ -372,6 +372,10 @@ table {
 #userProfile #userDataBox #userProfileButton #first {
   margin-left: 0%;
 }
+#userProfile #userDataBox #userProfileButton .followed {
+  background: white;
+  color: #b49cf1;
+}
 #userProfile #userQuestionBox {
   display: block;
   background: red;
